@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<style type="text/css">
+			body {
+				margin: 0px;
+			}
+			
+			#header {
+				height: 60px;
+				width: 100%;
+				background: #999;
+			}
+			
+			#logo {
+				float: left;
+				font-size: 30px;
+				padding-left: 20px;
+				padding-top: 15px;
+				color: white;
+			}
+			
+			#menu-button {
+				float: left;
+				padding-top: 20px;
+				padding-left: 25px;
+			}
+			
+			#dialog-button {
+				float: left;
+				padding-top: 20px;
+				padding-left: 25px;
+			}
+			
+			.dropdown-panel {
+				overflow: hidden;
+				top: 60px;
+				height: 0px;
+				width: 250px;
+				position: absolute;
+				background: #999;
+				color: white;
+				transition: height 0.3s linear 0s;
+			}
+			
+			#menu-panel {
+				left: 125px;
+			}
+			
+			#dialog-panel {
+				left: 215px;
+			}
+			
+			#menu-panel > div > a {
+				display: block;
+				text-decoration: none;
+				padding: 5px;
+				background: #999;
+				color: #FFF;
+			}
+			
+			#menu-panel > div > a:hover {
+				background: #FFF;
+				color: #000;
+			}
+			
+			#dialog-panel > div {
+				background: #333;
+				padding: 10px;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div id="header">
+			<div id="logo">LOGO</div>
+			
+			<div id="menu-button" class="button-holder">
+				<button onclick="toggleMenuPanel('menu-panel', 'menu-navarrow', '85px')"> Menu <span id="menu-navarrow"> &#9662 </span> </button>
+			</div>
+			<div id="menu-panel" class="dropdown-panel">
+				<div>
+					<a href="#" onclick="return false;" onmousedown="clickMenu('Menu Item 1')">Menu Item 1</a>
+					<a href="#" onclick="return false;" onmousedown="clickMenu('Menu Item 2')">Menu Item 2</a>
+					<a href="#" onclick="return false;" onmousedown="clickMenu('Menu Item 3')">Menu Item 3</a>
+				</div>
+			</div>
+			
+			<div id="dialog-button">
+				<button onclick="toggleMenuPanel('dialog-panel', 'dialog-navarrow', '110px')"> Dialog <span id="dialog-navarrow"> &#9662 </span> </button>
+			</div>
+			<div id="dialog-panel" class="dropdown-panel">
+				<div>
+					<p>This is the dialog panel</p>
+					<p>You can write any important contents here</p>
+				</div>
+			</div>
+			
+		</div>
+		
+		<script>
+		<!--
+			var panels = ["menu-panel", "dialog-panel"];
+			var navarrows = ["menu-navarrow", "dialog-navarrow"];
+			
+			function toggleMenuPanel(x, y, h) {
+				var panel = document.getElementById(x);
+				var navarrow = document.getElementById(y);
+				var maxH = h;
+				
+				for(var p in panels) {
+					if(panels[p] != x) {
+						document.getElementById(panels[p]).style.height = "0px";
+					}
+				}
+				
+				for(var n in navarrows) {
+					if(navarrows[n] != y) {
+						document.getElementById(navarrows[n]).innerHTML = "&#9662";;
+					}
+				}
+				
+				if(panel.style.height == maxH ) {
+					panel.style.height = "0px";
+					navarrow.innerHTML = "&#9662";
+				} else {
+					panel.style.height = maxH;
+					navarrow.innerHTML = "&#9652";
+				}
+			}
+			
+		-->
+		</script>
+		<noscript>
+			<p>This website requires javascript enabled.</p>
+		</noscript>
+	</body>
+</html>
